@@ -45,19 +45,6 @@ export default function Index() {
       features: ["Logo animation", "Explainer videos", "Effets visuels"],
       color: "from-blue-400 to-blue-500",
     },
-    {
-      icon: Image,
-      title: "Minia",
-      description:
-        "Création de miniatures accrocheuses qui maximisent vos clics",
-      features: [
-        "Design impactant",
-        "A/B testing",
-        "Optimisation CTR",
-        "Cohérence visuelle",
-      ],
-      color: "from-blue-300 to-blue-400",
-    },
   ];
 
   const portfolioItems = [
@@ -131,7 +118,7 @@ export default function Index() {
               BluePrime
             </motion.div>
             <div className="hidden md:flex space-x-8">
-              {["Accueil", "Services", "Portfolio", "À propos"].map((item) => (
+              {["Accueil", "Services", "Portfolio", "Contact"].map((item) => (
                 <motion.a
                   key={item}
                   href={`#${item.toLowerCase().replace(" ", "-")}`}
@@ -319,7 +306,7 @@ export default function Index() {
           </AnimatedSection>
 
           <AnimatedText
-            text="Créateur Visuel • Motion Designer • Expert Miniatures"
+            text="Créateur Visuel • Motion Designer • Monteur Vidéo"
             delay={1}
             className="text-xl md:text-2xl mb-8 text-blue-100 font-light"
           />
@@ -327,8 +314,8 @@ export default function Index() {
           <AnimatedSection direction="up" delay={1.5}>
             <p className="text-lg md:text-xl mb-12 max-w-3xl mx-auto leading-relaxed text-blue-50">
               Transformez vos idées en expériences visuelles captivantes. Du
-              montage vidéo professionnel aux animations motion design, en
-              passant par des miniatures qui convertissent.
+              montage vidéo professionnel aux animations motion design, je donne
+              vie à vos projets avec créativité et expertise.
             </p>
           </AnimatedSection>
         </div>
@@ -504,78 +491,144 @@ export default function Index() {
         </div>
       </section>
 
-      {/* About Section */}
+      {/* Portfolio Section */}
       <section
-        id="à-propos"
+        id="portfolio"
         className="py-24 bg-gradient-to-r from-slate-50 to-blue-50"
       >
         <div className="container mx-auto px-6">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <AnimatedSection direction="left">
-              <div className="relative">
+          <AnimatedSection direction="up" className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold gradient-text mb-6">
+              Mes Créations
+            </h2>
+            <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+              Découvrez quelques-unes de mes réalisations vidéo
+            </p>
+          </AnimatedSection>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              {
+                title: "AOT Revolution Final",
+                url: "https://storage.googleapis.com/creatorspace-public/users%2Fcmawmy1890050o0015v9s980z%2FhJ2kzdYq88XQFA1F-AOT%2520Revolution_1.mp4F%2520Final.mp4",
+                description: "Montage dynamique sur l'univers Attack on Titan",
+              },
+              {
+                title: "Video Part 2",
+                url: "https://storage.googleapis.com/creatorspace-public/users%2Fcmawmy1890050o0015v9s980z%2F993TvwpG04vxTwdm-video%2520prt%2520_2.mp4",
+                description: "Création vidéo avec effets visuels avancés",
+              },
+              {
+                title: "Blox Fruit Update 26",
+                url: "https://storage.googleapis.com/creatorspace-public/users%2Fcmawmy1890050o0015v9s980z%2F6FZPOjV9gqZj6Wz3-BLOX%2520FRUIT%2520!%2520LUPDATE%252026%2520est%2520MIEUX%2520que%2520celle%2520du%2520DRAGON%2520.mp4",
+                description: "Montage gaming Blox Fruit avec motion design",
+              },
+              {
+                title: "Blue Lock Rivals - Kaiser",
+                url: "https://storage.googleapis.com/creatorspace-public/users%2Fcmawmy1890050o0015v9s980z%2FanOL13zR4t5DmBTh-KAISER%2520trop%2520BOOSTER%2520sur%2520BLUE%2520LOCK%2520RIVALS%2520(Je%2520sais%2520je%2520suis%2520en%2520retard%2520!).mp4",
+                description: "Montage gaming Blue Lock avec effets spéciaux",
+              },
+              {
+                title: "César Clown - Blox Fruits",
+                url: "https://storage.googleapis.com/creatorspace-public/users%2Fcmawmy1890050o0015v9s980z%2FS3digV4g9xPke3rv-Je%2520deviens%2520C%25C3%2589SAR%2520CLOWN%2520en%2520mangeant%2520le%2520FRUIT%2520du%2520GAS%2520sur%2520Blox%2520Fruits..mp4",
+                description: "Aventure gaming avec montage créatif",
+              },
+            ].map((video, index) => (
+              <AnimatedSection
+                key={video.title}
+                direction="up"
+                delay={index * 0.1}
+                className="h-full"
+              >
                 <motion.div
-                  className="w-full h-96 bg-blue-gradient rounded-3xl"
-                  whileHover={{ scale: 1.02 }}
+                  whileHover={{ y: -10, scale: 1.02 }}
                   transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                />
-                <motion.div
-                  className="absolute -top-6 -right-6 w-32 h-32 bg-white/20 rounded-full"
-                  animate={{ rotate: 360 }}
-                  transition={{
-                    duration: 20,
-                    repeat: Infinity,
-                    ease: "linear",
-                  }}
-                />
-                <motion.div
-                  className="absolute -bottom-6 -left-6 w-24 h-24 bg-white/30 rounded-full"
-                  animate={{ rotate: -360 }}
-                  transition={{
-                    duration: 15,
-                    repeat: Infinity,
-                    ease: "linear",
-                  }}
-                />
-              </div>
-            </AnimatedSection>
-
-            <AnimatedSection direction="right">
-              <h2 className="text-4xl md:text-5xl font-bold gradient-text mb-6">
-                À Propos de BluePrime
-              </h2>
-              <p className="text-lg text-slate-600 mb-6 leading-relaxed">
-                Passionné par l'art visuel et les nouvelles technologies, je me
-                spécialise dans la création de contenus visuels qui captivent et
-                convertissent.
-              </p>
-              <p className="text-lg text-slate-600 mb-8 leading-relaxed">
-                Avec plus de 2 ans d'expérience et plus de 200 projets réalisés,
-                j'accompagne mes clients dans la réalisation de leurs visions
-                créatives, du concept à la production finale.
-              </p>
-
-              <div className="space-y-4">
-                {[
-                  "Approche créative et personnalisée",
-                  "Respect des délais et du budget",
-                  "Communication transparente",
-                  "Support post-livraison",
-                ].map((point, index) => (
-                  <motion.div
-                    key={point}
-                    className="flex items-center"
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ delay: index * 0.1, duration: 0.6 }}
-                    viewport={{ once: true }}
-                  >
-                    <div className="w-3 h-3 bg-blue-500 rounded-full mr-4"></div>
-                    <span className="text-slate-700 font-medium">{point}</span>
-                  </motion.div>
-                ))}
-              </div>
-            </AnimatedSection>
+                >
+                  <Card className="overflow-hidden glass-effect hover:shadow-2xl transition-all duration-300 border-0 h-full">
+                    <div className="relative group">
+                      <video
+                        className="w-full h-48 object-cover"
+                        controls
+                        poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300' viewBox='0 0 400 300'%3E%3Crect width='400' height='300' fill='%23dbeafe'/%3E%3Cpath fill='%233b82f6' d='M150 100l100 50-100 50z'/%3E%3C/svg%3E"
+                      >
+                        <source src={video.url} type="video/mp4" />
+                        Votre navigateur ne supporte pas la lecture vidéo.
+                      </video>
+                      <div className="absolute inset-0 bg-blue-600/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <Play className="h-12 w-12 text-white" />
+                      </div>
+                    </div>
+                    <div className="p-6">
+                      <Badge className="mb-3 bg-blue-100 text-blue-700 hover:bg-blue-200">
+                        Montage Vidéo
+                      </Badge>
+                      <h3 className="text-xl font-bold mb-3 text-slate-800">
+                        {video.title}
+                      </h3>
+                      <p className="text-slate-600 leading-relaxed">
+                        {video.description}
+                      </p>
+                    </div>
+                  </Card>
+                </motion.div>
+              </AnimatedSection>
+            ))}
           </div>
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <section
+        id="contact"
+        className="py-24 bg-gradient-to-br from-blue-900 via-blue-600 to-indigo-800 relative overflow-hidden"
+      >
+        <BlueParticles />
+        <LightBeams />
+
+        <div className="container mx-auto px-6 text-center relative z-10">
+          <AnimatedSection direction="up">
+            <h2 className="text-4xl md:text-6xl font-bold text-white mb-6">
+              Me Contacter
+            </h2>
+            <p className="text-xl text-blue-100 mb-12 max-w-3xl mx-auto">
+              Prêt à donner vie à votre projet ? Découvrez tout mon univers et
+              contactez-moi facilement.
+            </p>
+
+            <motion.div
+              whileHover={{ scale: 1.05, y: -5 }}
+              whileTap={{ scale: 0.95 }}
+              transition={{ type: "spring", stiffness: 400, damping: 17 }}
+            >
+              <a
+                href="https://bento.me/blueprime"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center bg-white text-blue-600 hover:bg-blue-50 font-semibold px-12 py-4 rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 text-lg relative overflow-hidden"
+                style={{
+                  boxShadow:
+                    "0 0 30px rgba(255, 255, 255, 0.5), 0 10px 30px rgba(59, 130, 246, 0.3)",
+                }}
+              >
+                <motion.div
+                  className="absolute inset-0 bg-gradient-to-r from-blue-400/20 to-blue-600/20"
+                  animate={{
+                    x: ["-100%", "100%"],
+                  }}
+                  transition={{
+                    duration: 2,
+                    repeat: Infinity,
+                    ease: "linear",
+                  }}
+                />
+                <span className="relative z-10 flex items-center">
+                  <Users className="mr-3 h-6 w-6" />
+                  Voir mon Bento
+                  <ArrowRight className="ml-3 h-6 w-6" />
+                </span>
+              </a>
+            </motion.div>
+          </AnimatedSection>
         </div>
       </section>
 
@@ -613,7 +666,7 @@ export default function Index() {
                 BluePrime
               </motion.div>
               <p className="text-slate-400 mb-6">
-                Créateur Visuel • Motion Designer • Expert Miniatures
+                Créateur Visuel • Motion Designer • Monteur Vidéo
               </p>
               <div className="border-t border-slate-700 pt-6">
                 <p className="text-slate-500 text-sm">
