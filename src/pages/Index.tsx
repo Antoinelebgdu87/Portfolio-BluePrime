@@ -67,7 +67,7 @@ export default function Index() {
     },
     {
       title: "Série Documentaire",
-      category: "Montage Vidéo",
+      category: "Montage Vid��o",
       image:
         "https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=600&h=400&fit=crop",
       description: "Montage de 8 épisodes avec narration immersive",
@@ -332,61 +332,6 @@ export default function Index() {
                     {stat.value}
                   </div>
                   <div className="text-blue-200 font-medium">{stat.label}</div>
-                </motion.div>
-              </AnimatedSection>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Portfolio Section */}
-      <section id="portfolio" className="py-24">
-        <div className="container mx-auto px-6">
-          <AnimatedSection direction="up" className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold gradient-text mb-6">
-              Portfolio
-            </h2>
-            <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-              Découvrez quelques-uns de mes projets récents
-            </p>
-          </AnimatedSection>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {portfolioItems.map((item, index) => (
-              <AnimatedSection
-                key={item.title}
-                direction="up"
-                delay={index * 0.1}
-                className="h-full"
-              >
-                <motion.div
-                  whileHover={{ y: -10 }}
-                  transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                  className="h-full"
-                >
-                  <Card className="overflow-hidden glass-effect hover:shadow-2xl transition-all duration-300 border-0 h-full">
-                    <div className="relative group">
-                      <img
-                        src={item.image}
-                        alt={item.title}
-                        className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
-                      />
-                      <div className="absolute inset-0 bg-blue-600/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                        <Play className="h-12 w-12 text-white" />
-                      </div>
-                    </div>
-                    <div className="p-6">
-                      <Badge className="mb-3 bg-blue-100 text-blue-700 hover:bg-blue-200">
-                        {item.category}
-                      </Badge>
-                      <h3 className="text-xl font-bold mb-3 text-slate-800">
-                        {item.title}
-                      </h3>
-                      <p className="text-slate-600 leading-relaxed">
-                        {item.description}
-                      </p>
-                    </div>
-                  </Card>
                 </motion.div>
               </AnimatedSection>
             ))}
