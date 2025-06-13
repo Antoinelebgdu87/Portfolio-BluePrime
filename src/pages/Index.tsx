@@ -1,5 +1,11 @@
 import { motion } from "framer-motion";
 import { AnimatedSection, AnimatedText } from "../components/AnimatedSection";
+import {
+  BlueParticles,
+  GeometricShapes,
+  LightBeams,
+  OrbitingElements,
+} from "../components/BlueParticles";
 import { Card } from "../components/ui/card";
 import { Badge } from "../components/ui/badge";
 import { Button } from "../components/ui/button";
@@ -12,6 +18,8 @@ import {
   Award,
   Users,
   Clock,
+  Sparkles,
+  Zap,
 } from "lucide-react";
 
 export default function Index() {
@@ -67,7 +75,7 @@ export default function Index() {
     },
     {
       title: "Série Documentaire",
-      category: "Montage Vid��o",
+      category: "Montage Vidéo",
       image:
         "https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=600&h=400&fit=crop",
       description: "Montage de 8 épisodes avec narration immersive",
@@ -149,35 +157,117 @@ export default function Index() {
         id="accueil"
         className="relative min-h-screen flex items-center justify-center overflow-hidden"
       >
-        <div className="absolute inset-0 bg-blue-gradient opacity-90"></div>
+        {/* Multiple layered backgrounds */}
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-900 via-blue-600 to-indigo-800 opacity-95"></div>
+
         <motion.div
-          className="absolute inset-0 bg-blue-radial opacity-30"
+          className="absolute inset-0"
+          style={{
+            background: `
+              radial-gradient(circle at 20% 30%, rgba(59, 130, 246, 0.4) 0%, transparent 50%),
+              radial-gradient(circle at 80% 70%, rgba(96, 165, 250, 0.3) 0%, transparent 50%),
+              radial-gradient(circle at 50% 50%, rgba(147, 197, 253, 0.2) 0%, transparent 70%)
+            `,
+          }}
           animate={{
-            backgroundPosition: ["0% 0%", "100% 100%", "0% 0%"],
+            backgroundPosition: [
+              "20% 30%, 80% 70%, 50% 50%",
+              "30% 40%, 70% 60%, 60% 40%",
+              "20% 30%, 80% 70%, 50% 50%",
+            ],
           }}
           transition={{
-            duration: 20,
+            duration: 15,
             repeat: Infinity,
-            ease: "linear",
+            ease: "easeInOut",
           }}
-        ></motion.div>
-
-        {/* Floating elements */}
-        <motion.div
-          className="absolute top-20 left-10 w-20 h-20 bg-white/10 rounded-full"
-          animate={{ y: [0, -20, 0], rotate: [0, 180, 360] }}
-          transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
         />
+
+        {/* Spectacular visual effects */}
+        <BlueParticles />
+        <GeometricShapes />
+        <LightBeams />
+        <OrbitingElements />
+
+        {/* Enhanced floating elements */}
         <motion.div
-          className="absolute top-40 right-20 w-32 h-32 bg-white/5 rounded-full"
-          animate={{ y: [0, 20, 0], rotate: [360, 180, 0] }}
+          className="absolute top-20 left-10 w-24 h-24 rounded-full"
+          style={{
+            background:
+              "linear-gradient(45deg, rgba(59, 130, 246, 0.3), rgba(96, 165, 250, 0.1))",
+            boxShadow: "0 0 30px rgba(59, 130, 246, 0.4)",
+          }}
+          animate={{
+            y: [0, -40, 0],
+            rotate: [0, 180, 360],
+            scale: [1, 1.2, 1],
+          }}
           transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
         />
+
         <motion.div
-          className="absolute bottom-40 left-20 w-16 h-16 bg-white/10 rounded-full"
-          animate={{ y: [0, -30, 0], x: [0, 10, 0] }}
+          className="absolute top-40 right-20 w-40 h-40 rounded-full"
+          style={{
+            background:
+              "linear-gradient(135deg, rgba(147, 197, 253, 0.2), rgba(191, 219, 254, 0.1))",
+            boxShadow: "0 0 50px rgba(147, 197, 253, 0.3)",
+          }}
+          animate={{
+            y: [0, 30, 0],
+            rotate: [360, 180, 0],
+            scale: [1, 0.8, 1],
+          }}
+          transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
+        />
+
+        <motion.div
+          className="absolute bottom-40 left-20 w-20 h-20 rounded-full"
+          style={{
+            background:
+              "linear-gradient(225deg, rgba(96, 165, 250, 0.4), rgba(59, 130, 246, 0.2))",
+            boxShadow: "0 0 40px rgba(96, 165, 250, 0.5)",
+          }}
+          animate={{
+            y: [0, -50, 0],
+            x: [0, 20, 0],
+            scale: [1, 1.3, 1],
+          }}
           transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
         />
+
+        {/* Additional magical elements */}
+        <motion.div
+          className="absolute top-60 left-1/2 w-8 h-8 -translate-x-1/2"
+          animate={{
+            y: [0, -100, 0],
+            opacity: [0, 1, 0],
+            scale: [0.5, 1, 0.5],
+          }}
+          transition={{
+            duration: 4,
+            repeat: Infinity,
+            ease: "easeOut",
+          }}
+        >
+          <Sparkles className="w-full h-full text-blue-200" />
+        </motion.div>
+
+        <motion.div
+          className="absolute bottom-60 right-1/3 w-6 h-6"
+          animate={{
+            y: [0, -80, 0],
+            opacity: [0, 1, 0],
+            rotate: [0, 360, 720],
+          }}
+          transition={{
+            duration: 5,
+            repeat: Infinity,
+            ease: "easeOut",
+            delay: 2,
+          }}
+        >
+          <Zap className="w-full h-full text-blue-300" />
+        </motion.div>
 
         <div className="relative z-10 text-center text-white px-6">
           <AnimatedSection direction="fade" delay={0.2}>
@@ -190,9 +280,46 @@ export default function Index() {
                 delay: 0.5,
                 ease: [0.21, 0.47, 0.32, 0.98],
               }}
+              style={{
+                textShadow:
+                  "0 0 30px rgba(59, 130, 246, 0.8), 0 0 60px rgba(96, 165, 250, 0.6)",
+              }}
             >
-              <span className="block">Blue</span>
-              <span className="block text-blue-200">Prime</span>
+              <motion.span
+                className="block"
+                animate={{
+                  textShadow: [
+                    "0 0 30px rgba(59, 130, 246, 0.8)",
+                    "0 0 50px rgba(96, 165, 250, 1)",
+                    "0 0 30px rgba(59, 130, 246, 0.8)",
+                  ],
+                }}
+                transition={{
+                  duration: 3,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
+              >
+                Blue
+              </motion.span>
+              <motion.span
+                className="block text-blue-200"
+                animate={{
+                  textShadow: [
+                    "0 0 20px rgba(191, 219, 254, 0.8)",
+                    "0 0 40px rgba(147, 197, 253, 1)",
+                    "0 0 20px rgba(191, 219, 254, 0.8)",
+                  ],
+                }}
+                transition={{
+                  duration: 3,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                  delay: 1.5,
+                }}
+              >
+                Prime
+              </motion.span>
             </motion.h1>
           </AnimatedSection>
 
@@ -212,20 +339,68 @@ export default function Index() {
 
           <AnimatedSection direction="up" delay={2}>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button
-                size="lg"
-                className="bg-white text-blue-600 hover:bg-blue-50 font-semibold px-8 py-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
+              <motion.div
+                whileHover={{ scale: 1.05, y: -5 }}
+                whileTap={{ scale: 0.95 }}
+                transition={{ type: "spring", stiffness: 400, damping: 17 }}
               >
-                Voir le Portfolio
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
-              <Button
-                variant="outline"
-                size="lg"
-                className="border-white text-white hover:bg-white hover:text-blue-600 font-semibold px-8 py-3 rounded-full transition-all duration-300"
+                <Button
+                  size="lg"
+                  className="bg-white text-blue-600 hover:bg-blue-50 font-semibold px-8 py-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 relative overflow-hidden"
+                  style={{
+                    boxShadow:
+                      "0 0 30px rgba(255, 255, 255, 0.5), 0 10px 30px rgba(59, 130, 246, 0.3)",
+                  }}
+                >
+                  <motion.div
+                    className="absolute inset-0 bg-gradient-to-r from-blue-400/20 to-blue-600/20"
+                    animate={{
+                      x: ["-100%", "100%"],
+                    }}
+                    transition={{
+                      duration: 2,
+                      repeat: Infinity,
+                      ease: "linear",
+                    }}
+                  />
+                  <span className="relative z-10 flex items-center">
+                    Voir le Portfolio
+                    <ArrowRight className="ml-2 h-5 w-5" />
+                  </span>
+                </Button>
+              </motion.div>
+
+              <motion.div
+                whileHover={{ scale: 1.05, y: -5 }}
+                whileTap={{ scale: 0.95 }}
+                transition={{ type: "spring", stiffness: 400, damping: 17 }}
               >
-                Découvrir les Services
-              </Button>
+                <Button
+                  variant="outline"
+                  size="lg"
+                  className="border-white text-white hover:bg-white hover:text-blue-600 font-semibold px-8 py-3 rounded-full transition-all duration-300 relative overflow-hidden"
+                  style={{
+                    boxShadow: "0 0 20px rgba(147, 197, 253, 0.4)",
+                    borderColor: "rgba(255, 255, 255, 0.6)",
+                  }}
+                >
+                  <motion.div
+                    className="absolute inset-0 bg-gradient-to-r from-white/10 to-blue-200/10"
+                    animate={{
+                      x: ["-100%", "100%"],
+                    }}
+                    transition={{
+                      duration: 3,
+                      repeat: Infinity,
+                      ease: "linear",
+                    }}
+                  />
+                  <span className="relative z-10 flex items-center">
+                    Découvrir les Services
+                    <Sparkles className="ml-2 h-4 w-4" />
+                  </span>
+                </Button>
+              </motion.div>
             </div>
           </AnimatedSection>
         </div>
@@ -242,8 +417,32 @@ export default function Index() {
       </section>
 
       {/* Services Section */}
-      <section id="services" className="py-24 relative">
-        <div className="container mx-auto px-6">
+      <section id="services" className="py-24 relative overflow-hidden">
+        {/* Background effects */}
+        <div className="absolute inset-0 bg-gradient-to-b from-slate-50 via-blue-50/50 to-indigo-100/30" />
+        <motion.div
+          className="absolute top-0 left-0 w-full h-full opacity-30"
+          style={{
+            background: `
+              radial-gradient(circle at 10% 20%, rgba(59, 130, 246, 0.1) 0%, transparent 50%),
+              radial-gradient(circle at 90% 80%, rgba(96, 165, 250, 0.15) 0%, transparent 50%)
+            `,
+          }}
+          animate={{
+            backgroundPosition: [
+              "10% 20%, 90% 80%",
+              "20% 30%, 80% 70%",
+              "10% 20%, 90% 80%",
+            ],
+          }}
+          transition={{
+            duration: 20,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+        />
+
+        <div className="container mx-auto px-6 relative z-10">
           <AnimatedSection direction="up" className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold gradient-text mb-6">
               Mes Services
@@ -262,10 +461,48 @@ export default function Index() {
                 className="h-full"
               >
                 <motion.div
-                  whileHover={{ y: -10 }}
+                  whileHover={{
+                    y: -15,
+                    scale: 1.02,
+                  }}
                   transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                  className="group"
                 >
-                  <Card className="p-8 h-full glass-effect hover:shadow-2xl transition-all duration-300 border-0">
+                  <Card
+                    className="p-8 h-full glass-effect hover:shadow-2xl transition-all duration-300 border-0 relative overflow-hidden"
+                    style={{
+                      background: "rgba(255, 255, 255, 0.9)",
+                      backdropFilter: "blur(20px)",
+                      border: "1px solid rgba(59, 130, 246, 0.1)",
+                    }}
+                  >
+                    {/* Hover glow effect */}
+                    <motion.div
+                      className="absolute inset-0 opacity-0 group-hover:opacity-100"
+                      style={{
+                        background:
+                          "linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(96, 165, 250, 0.05))",
+                        boxShadow: "0 0 50px rgba(59, 130, 246, 0.2)",
+                      }}
+                      transition={{ duration: 0.3 }}
+                    />
+
+                    {/* Animated border effect */}
+                    <motion.div
+                      className="absolute inset-0 rounded-lg opacity-0 group-hover:opacity-100"
+                      style={{
+                        background:
+                          "linear-gradient(45deg, transparent, rgba(59, 130, 246, 0.3), transparent)",
+                      }}
+                      animate={{
+                        backgroundPosition: ["0% 0%", "100% 100%"],
+                      }}
+                      transition={{
+                        duration: 2,
+                        repeat: Infinity,
+                        ease: "linear",
+                      }}
+                    />
                     <div
                       className={`w-16 h-16 rounded-2xl bg-gradient-to-r ${service.color} flex items-center justify-center mb-6`}
                     >
