@@ -509,33 +509,62 @@ export default function Index() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
-                title: "AOT Revolution Final",
-                url: "https://storage.googleapis.com/creatorspace-public/users%2Fcmawmy1890050o0015v9s980z%2FhJ2kzdYq88XQFA1F-AOT%2520Revolution_1.mp4F%2520Final.mp4",
-                description: "Montage dynamique sur l'univers Attack on Titan",
+                title: "Chaîne Unblox",
+                category: "Montage Vidéo",
+                stats: "5K abonnés",
+                description:
+                  "Montage professionnel pour chaîne gaming avec effets visuels dynamiques",
+                image:
+                  "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=600&h=400&fit=crop",
               },
               {
-                title: "Video Part 2",
-                url: "https://storage.googleapis.com/creatorspace-public/users%2Fcmawmy1890050o0015v9s980z%2F993TvwpG04vxTwdm-video%2520prt%2520_2.mp4",
-                description: "Création vidéo avec effets visuels avancés",
+                title: "Chaîne Nyjitag",
+                category: "Montage Vidéo",
+                stats: "2,5K abonnés",
+                description:
+                  "Création complète de contenu vidéo avec storytelling engageant",
+                image:
+                  "https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=600&h=400&fit=crop",
               },
               {
-                title: "Blox Fruit Update 26",
-                url: "https://storage.googleapis.com/creatorspace-public/users%2Fcmawmy1890050o0015v9s980z%2F6FZPOjV9gqZj6Wz3-BLOX%2520FRUIT%2520!%2520LUPDATE%252026%2520est%2520MIEUX%2520que%2520celle%2520du%2520DRAGON%2520.mp4",
-                description: "Montage gaming Blox Fruit avec motion design",
+                title: "Chaîne HazbinCombo",
+                category: "Montage Vidéo",
+                stats: "2,11K abonnés",
+                description:
+                  "Montage créatif avec animations et effets spéciaux avancés",
+                image:
+                  "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=600&h=400&fit=crop",
               },
               {
-                title: "Blue Lock Rivals - Kaiser",
-                url: "https://storage.googleapis.com/creatorspace-public/users%2Fcmawmy1890050o0015v9s980z%2FanOL13zR4t5DmBTh-KAISER%2520trop%2520BOOSTER%2520sur%2520BLUE%2520LOCK%2520RIVALS%2520(Je%2520sais%2520je%2520suis%2520en%2520retard%2520!).mp4",
-                description: "Montage gaming Blue Lock avec effets spéciaux",
+                title: "Projets Motion Design",
+                category: "Motion Design",
+                stats: "Animations 2D/3D",
+                description:
+                  "Créations motion design avec logo animations et effets visuels",
+                image:
+                  "https://images.unsplash.com/photo-1558655146-364adaf1fcc9?w=600&h=400&fit=crop",
               },
               {
-                title: "César Clown - Blox Fruits",
-                url: "https://storage.googleapis.com/creatorspace-public/users%2Fcmawmy1890050o0015v9s980z%2FS3digV4g9xPke3rv-Je%2520deviens%2520C%25C3%2589SAR%2520CLOWN%2520en%2520mangeant%2520le%2520FRUIT%2520du%2520GAS%2520sur%2520Blox%2520Fruits..mp4",
-                description: "Aventure gaming avec montage créatif",
+                title: "Intro Professionnelle",
+                category: "Motion Design",
+                stats: "Design sur mesure",
+                description:
+                  "Création d'intros personnalisées pour chaînes YouTube",
+                image:
+                  "https://images.unsplash.com/photo-1590736969955-71cc94901144?w=600&h=400&fit=crop",
               },
-            ].map((video, index) => (
+              {
+                title: "Effets Spéciaux Gaming",
+                category: "Montage Vidéo",
+                stats: "Techniques avancées",
+                description:
+                  "Montage gaming avec transitions et effets visuels immersifs",
+                image:
+                  "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=400&fit=crop",
+              },
+            ].map((project, index) => (
               <AnimatedSection
-                key={video.title}
+                key={project.title}
                 direction="up"
                 delay={index * 0.1}
                 className="h-full"
@@ -546,27 +575,27 @@ export default function Index() {
                 >
                   <Card className="overflow-hidden glass-effect hover:shadow-2xl transition-all duration-300 border-0 h-full">
                     <div className="relative group">
-                      <video
-                        className="w-full h-48 object-cover"
-                        controls
-                        poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300' viewBox='0 0 400 300'%3E%3Crect width='400' height='300' fill='%23dbeafe'/%3E%3Cpath fill='%233b82f6' d='M150 100l100 50-100 50z'/%3E%3C/svg%3E"
-                      >
-                        <source src={video.url} type="video/mp4" />
-                        Votre navigateur ne supporte pas la lecture vidéo.
-                      </video>
-                      <div className="absolute inset-0 bg-blue-600/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                      <img
+                        src={project.image}
+                        alt={project.title}
+                        className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
+                      />
+                      <div className="absolute inset-0 bg-blue-600/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                         <Play className="h-12 w-12 text-white" />
+                      </div>
+                      <div className="absolute top-4 right-4 bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-medium">
+                        {project.stats}
                       </div>
                     </div>
                     <div className="p-6">
                       <Badge className="mb-3 bg-blue-100 text-blue-700 hover:bg-blue-200">
-                        Montage Vidéo
+                        {project.category}
                       </Badge>
                       <h3 className="text-xl font-bold mb-3 text-slate-800">
-                        {video.title}
+                        {project.title}
                       </h3>
                       <p className="text-slate-600 leading-relaxed">
-                        {video.description}
+                        {project.description}
                       </p>
                     </div>
                   </Card>
@@ -591,10 +620,9 @@ export default function Index() {
               Me Contacter
             </h2>
             <p className="text-xl text-blue-100 mb-12 max-w-3xl mx-auto">
-              Prêt à donner vie à votre projet ? Découvrez tout mon univers et
-              contactez-moi facilement.
+              Découvrez tous mes projets, mes chaînes YouTube et contactez-moi
+              pour vos montages.
             </p>
-
             <motion.div
               whileHover={{ scale: 1.05, y: -5 }}
               whileTap={{ scale: 0.95 }}
