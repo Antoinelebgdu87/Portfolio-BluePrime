@@ -42,12 +42,7 @@ export default function Index() {
       title: "Motion Design",
       description:
         "Animations et graphismes en mouvement pour donner vie à vos idées",
-      features: [
-        "Animations 2D/3D",
-        "Logo animation",
-        "Explainer videos",
-        "Effets visuels",
-      ],
+      features: ["Logo animation", "Explainer videos", "Effets visuels"],
       color: "from-blue-400 to-blue-500",
     },
     {
