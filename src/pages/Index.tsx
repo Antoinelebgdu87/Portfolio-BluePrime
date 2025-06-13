@@ -336,73 +336,6 @@ export default function Index() {
               passant par des miniatures qui convertissent.
             </p>
           </AnimatedSection>
-
-          <AnimatedSection direction="up" delay={2}>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <motion.div
-                whileHover={{ scale: 1.05, y: -5 }}
-                whileTap={{ scale: 0.95 }}
-                transition={{ type: "spring", stiffness: 400, damping: 17 }}
-              >
-                <Button
-                  size="lg"
-                  className="bg-white text-blue-600 hover:bg-blue-50 font-semibold px-8 py-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 relative overflow-hidden"
-                  style={{
-                    boxShadow:
-                      "0 0 30px rgba(255, 255, 255, 0.5), 0 10px 30px rgba(59, 130, 246, 0.3)",
-                  }}
-                >
-                  <motion.div
-                    className="absolute inset-0 bg-gradient-to-r from-blue-400/20 to-blue-600/20"
-                    animate={{
-                      x: ["-100%", "100%"],
-                    }}
-                    transition={{
-                      duration: 2,
-                      repeat: Infinity,
-                      ease: "linear",
-                    }}
-                  />
-                  <span className="relative z-10 flex items-center">
-                    Voir le Portfolio
-                    <ArrowRight className="ml-2 h-5 w-5" />
-                  </span>
-                </Button>
-              </motion.div>
-
-              <motion.div
-                whileHover={{ scale: 1.05, y: -5 }}
-                whileTap={{ scale: 0.95 }}
-                transition={{ type: "spring", stiffness: 400, damping: 17 }}
-              >
-                <Button
-                  variant="outline"
-                  size="lg"
-                  className="border-white text-white hover:bg-white hover:text-blue-600 font-semibold px-8 py-3 rounded-full transition-all duration-300 relative overflow-hidden"
-                  style={{
-                    boxShadow: "0 0 20px rgba(147, 197, 253, 0.4)",
-                    borderColor: "rgba(255, 255, 255, 0.6)",
-                  }}
-                >
-                  <motion.div
-                    className="absolute inset-0 bg-gradient-to-r from-white/10 to-blue-200/10"
-                    animate={{
-                      x: ["-100%", "100%"],
-                    }}
-                    transition={{
-                      duration: 3,
-                      repeat: Infinity,
-                      ease: "linear",
-                    }}
-                  />
-                  <span className="relative z-10 flex items-center">
-                    Découvrir les Services
-                    <Sparkles className="ml-2 h-4 w-4" />
-                  </span>
-                </Button>
-              </motion.div>
-            </div>
-          </AnimatedSection>
         </div>
 
         <motion.div
@@ -669,25 +602,7 @@ export default function Index() {
           }}
         />
 
-        <div className="container mx-auto px-6 text-center relative z-10">
-          <AnimatedSection direction="up">
-            <h2 className="text-4xl md:text-6xl font-bold text-white mb-6">
-              Prêt à Créer Ensemble ?
-            </h2>
-            <p className="text-xl text-blue-100 mb-12 max-w-3xl mx-auto">
-              Donnons vie à votre projet avec des visuels qui marquent les
-              esprits. Parlons de vos besoins et créons quelque chose
-              d'extraordinaire.
-            </p>
-            <Button
-              size="lg"
-              className="bg-white text-blue-600 hover:bg-blue-50 font-semibold px-12 py-4 rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 text-lg"
-            >
-              Démarrer un Projet
-              <ArrowRight className="ml-3 h-6 w-6" />
-            </Button>
-          </AnimatedSection>
-        </div>
+        <div className="container mx-auto px-6 text-center relative z-10"></div>
       </section>
 
       {/* Footer */}
@@ -707,7 +622,7 @@ export default function Index() {
               </p>
               <div className="border-t border-slate-700 pt-6">
                 <p className="text-slate-500 text-sm">
-                  © 2024 BluePrime. Tous droits réservés.
+                  © 2025 BluePrime. Tous droits réservés.
                 </p>
               </div>
             </div>
