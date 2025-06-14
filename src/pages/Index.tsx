@@ -727,16 +727,17 @@ export default function Index() {
               Me Contacter
             </h2>
             <p className="text-xl text-blue-100 mb-12 max-w-3xl mx-auto">
-              Découvrez tous mes projets, mes chaînes YouTube et contactez-moi
-              pour vos montages.
+              Prêt à donner vie à vos projets ? Contactez-moi directement sur
+              Discord pour discuter de vos besoins.
             </p>
+
             <motion.div
               whileHover={{ scale: 1.05, y: -5 }}
               whileTap={{ scale: 0.95 }}
               transition={{ type: "spring", stiffness: 400, damping: 17 }}
             >
               <a
-                href="https://bento.me/blueprime"
+                href="https://discord.com/users/joyeux123"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center bg-white text-blue-600 hover:bg-blue-50 font-semibold px-12 py-4 rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 text-lg relative overflow-hidden"
@@ -758,11 +759,16 @@ export default function Index() {
                 />
                 <span className="relative z-10 flex items-center">
                   <Users className="mr-3 h-6 w-6" />
-                  Voir mon Bento
+                  Me contacter
                   <ArrowRight className="ml-3 h-6 w-6" />
                 </span>
               </a>
             </motion.div>
+
+            <div className="mt-8 text-center">
+              <p className="text-blue-200 text-lg mb-2">Discord :</p>
+              <p className="text-white text-xl font-semibold">joyeux123</p>
+            </div>
           </AnimatedSection>
         </div>
       </section>
