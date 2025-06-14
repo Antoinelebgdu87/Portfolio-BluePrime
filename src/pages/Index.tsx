@@ -129,6 +129,14 @@ export default function Index() {
                   {item}
                 </motion.a>
               ))}
+              <motion.a
+                href="/admin"
+                className="text-slate-700 hover:text-blue-600 font-medium transition-colors"
+                whileHover={{ y: -2 }}
+                transition={{ type: "spring", stiffness: 400, damping: 17 }}
+              >
+                Admin
+              </motion.a>
             </div>
           </div>
         </div>
