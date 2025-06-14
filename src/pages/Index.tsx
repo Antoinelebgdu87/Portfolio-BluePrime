@@ -492,7 +492,10 @@ export default function Index() {
       </section>
 
       {/* Mes projets Section */}
-      <section id="mes-projets" className="py-24 bg-gradient-to-r from-slate-50 to-blue-50">
+      <section
+        id="mes-projets"
+        className="py-24 bg-gradient-to-r from-slate-50 to-blue-50"
+      >
         <div className="container mx-auto px-6">
           <AnimatedSection direction="up" className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold gradient-text mb-6">
@@ -507,8 +510,12 @@ export default function Index() {
             {/* Unblox Channel */}
             <AnimatedSection direction="up" delay={0.1}>
               <div className="mb-8 text-center">
-                <h3 className="text-3xl font-bold gradient-text mb-2">Chaîne Unblox</h3>
-                <p className="text-lg text-slate-600">5K abonnés • Montage complet (sauf intro)</p>
+                <h3 className="text-3xl font-bold gradient-text mb-2">
+                  Chaîne Unblox
+                </h3>
+                <p className="text-lg text-slate-600">
+                  5K abonnés • Montage complet (sauf intro)
+                </p>
               </div>
               <div className="grid md:grid-cols-2 gap-6">
                 <motion.div
@@ -529,8 +536,12 @@ export default function Index() {
                       ></iframe>
                     </div>
                     <div className="p-4">
-                      <Badge className="mb-2 bg-blue-100 text-blue-700">Montage Vidéo</Badge>
-                      <p className="text-slate-600">Montage gaming dynamique avec effets visuels</p>
+                      <Badge className="mb-2 bg-blue-100 text-blue-700">
+                        Montage Vidéo
+                      </Badge>
+                      <p className="text-slate-600">
+                        Montage gaming dynamique avec effets visuels
+                      </p>
                     </div>
                   </Card>
                 </motion.div>
@@ -553,8 +564,12 @@ export default function Index() {
                       ></iframe>
                     </div>
                     <div className="p-4">
-                      <Badge className="mb-2 bg-blue-100 text-blue-700">Montage Vidéo</Badge>
-                      <p className="text-slate-600">Création de contenu gaming engageant</p>
+                      <Badge className="mb-2 bg-blue-100 text-blue-700">
+                        Montage Vidéo
+                      </Badge>
+                      <p className="text-slate-600">
+                        Création de contenu gaming engageant
+                      </p>
                     </div>
                   </Card>
                 </motion.div>
@@ -564,8 +579,12 @@ export default function Index() {
             {/* Nyjitag Channel */}
             <AnimatedSection direction="up" delay={0.2}>
               <div className="mb-8 text-center">
-                <h3 className="text-3xl font-bold gradient-text mb-2">Chaîne Nyjitag</h3>
-                <p className="text-lg text-slate-600">2,45K abonnés • Montage complet</p>
+                <h3 className="text-3xl font-bold gradient-text mb-2">
+                  Chaîne Nyjitag
+                </h3>
+                <p className="text-lg text-slate-600">
+                  2,45K abonnés • Montage complet
+                </p>
               </div>
               <div className="grid md:grid-cols-3 gap-6">
                 <motion.div
@@ -586,7 +605,9 @@ export default function Index() {
                       ></iframe>
                     </div>
                     <div className="p-4">
-                      <Badge className="mb-2 bg-green-100 text-green-700">Montage Complet</Badge>
+                      <Badge className="mb-2 bg-green-100 text-green-700">
+                        Montage Complet
+                      </Badge>
                       <p className="text-slate-600">Storytelling immersif</p>
                     </div>
                   </Card>
@@ -610,7 +631,9 @@ export default function Index() {
                       ></iframe>
                     </div>
                     <div className="p-4">
-                      <Badge className="mb-2 bg-green-100 text-green-700">Montage Complet</Badge>
+                      <Badge className="mb-2 bg-green-100 text-green-700">
+                        Montage Complet
+                      </Badge>
                       <p className="text-slate-600">Montage créatif avancé</p>
                     </div>
                   </Card>
@@ -634,8 +657,12 @@ export default function Index() {
                       ></iframe>
                     </div>
                     <div className="p-4">
-                      <Badge className="mb-2 bg-green-100 text-green-700">Montage Complet</Badge>
-                      <p className="text-slate-600">Effets visuels professionnels</p>
+                      <Badge className="mb-2 bg-green-100 text-green-700">
+                        Montage Complet
+                      </Badge>
+                      <p className="text-slate-600">
+                        Effets visuels professionnels
+                      </p>
                     </div>
                   </Card>
                 </motion.div>
@@ -645,8 +672,12 @@ export default function Index() {
             {/* HazbinCombo Channel */}
             <AnimatedSection direction="up" delay={0.3}>
               <div className="mb-8 text-center">
-                <h3 className="text-3xl font-bold gradient-text mb-2">Chaîne HazbinCombo</h3>
-                <p className="text-lg text-slate-600">2,20K abonnés • Montage spécialisé</p>
+                <h3 className="text-3xl font-bold gradient-text mb-2">
+                  Chaîne HazbinCombo
+                </h3>
+                <p className="text-lg text-slate-600">
+                  2,20K abonnés • Montage spécialisé
+                </p>
               </div>
               <div className="max-w-2xl mx-auto">
                 <motion.div
@@ -667,125 +698,17 @@ export default function Index() {
                       ></iframe>
                     </div>
                     <div className="p-4">
-                      <Badge className="mb-2 bg-purple-100 text-purple-700">Animation & Effects</Badge>
-                      <p className="text-slate-600">Montage avec animations et effets spéciaux avancés</p>
+                      <Badge className="mb-2 bg-purple-100 text-purple-700">
+                        Animation & Effects
+                      </Badge>
+                      <p className="text-slate-600">
+                        Montage avec animations et effets spéciaux avancés
+                      </p>
                     </div>
                   </Card>
                 </motion.div>
               </div>
             </AnimatedSection>
-          </div>
-        </div>
-      </section>
-        id="portfolio"
-        className="py-24 bg-gradient-to-r from-slate-50 to-blue-50"
-      >
-        <div className="container mx-auto px-6">
-          <AnimatedSection direction="up" className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold gradient-text mb-6">
-              Mes Créations
-            </h2>
-            <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-              Découvrez quelques-unes de mes réalisations vidéo
-            </p>
-          </AnimatedSection>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              {
-                title: "Chaîne Unblox",
-                category: "Montage Vidéo",
-                stats: "5K abonnés",
-                description:
-                  "Montage professionnel pour chaîne gaming avec effets visuels dynamiques",
-                image:
-                  "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=600&h=400&fit=crop",
-              },
-              {
-                title: "Chaîne Nyjitag",
-                category: "Montage Vidéo",
-                stats: "2,5K abonnés",
-                description:
-                  "Création complète de contenu vidéo avec storytelling engageant",
-                image:
-                  "https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=600&h=400&fit=crop",
-              },
-              {
-                title: "Chaîne HazbinCombo",
-                category: "Montage Vidéo",
-                stats: "2,11K abonnés",
-                description:
-                  "Montage créatif avec animations et effets spéciaux avancés",
-                image:
-                  "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=600&h=400&fit=crop",
-              },
-              {
-                title: "Projets Motion Design",
-                category: "Motion Design",
-                stats: "Animations 2D/3D",
-                description:
-                  "Créations motion design avec logo animations et effets visuels",
-                image:
-                  "https://images.unsplash.com/photo-1558655146-364adaf1fcc9?w=600&h=400&fit=crop",
-              },
-              {
-                title: "Intro Professionnelle",
-                category: "Motion Design",
-                stats: "Design sur mesure",
-                description:
-                  "Création d'intros personnalisées pour chaînes YouTube",
-                image:
-                  "https://images.unsplash.com/photo-1590736969955-71cc94901144?w=600&h=400&fit=crop",
-              },
-              {
-                title: "Effets Spéciaux Gaming",
-                category: "Montage Vidéo",
-                stats: "Techniques avancées",
-                description:
-                  "Montage gaming avec transitions et effets visuels immersifs",
-                image:
-                  "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=400&fit=crop",
-              },
-            ].map((project, index) => (
-              <AnimatedSection
-                key={project.title}
-                direction="up"
-                delay={index * 0.1}
-                className="h-full"
-              >
-                <motion.div
-                  whileHover={{ y: -10, scale: 1.02 }}
-                  transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                >
-                  <Card className="overflow-hidden glass-effect hover:shadow-2xl transition-all duration-300 border-0 h-full">
-                    <div className="relative group">
-                      <img
-                        src={project.image}
-                        alt={project.title}
-                        className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
-                      />
-                      <div className="absolute inset-0 bg-blue-600/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                        <Play className="h-12 w-12 text-white" />
-                      </div>
-                      <div className="absolute top-4 right-4 bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-medium">
-                        {project.stats}
-                      </div>
-                    </div>
-                    <div className="p-6">
-                      <Badge className="mb-3 bg-blue-100 text-blue-700 hover:bg-blue-200">
-                        {project.category}
-                      </Badge>
-                      <h3 className="text-xl font-bold mb-3 text-slate-800">
-                        {project.title}
-                      </h3>
-                      <p className="text-slate-600 leading-relaxed">
-                        {project.description}
-                      </p>
-                    </div>
-                  </Card>
-                </motion.div>
-              </AnimatedSection>
-            ))}
           </div>
         </div>
       </section>
