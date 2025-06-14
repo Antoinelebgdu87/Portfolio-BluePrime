@@ -9,6 +9,7 @@ import {
 import { Card } from "../components/ui/card";
 import { Badge } from "../components/ui/badge";
 import { Button } from "../components/ui/button";
+import { useVideos } from "../hooks/useVideos";
 import {
   Play,
   Palette,
@@ -23,6 +24,9 @@ import {
 } from "lucide-react";
 
 export default function Index() {
+  const { videos, getVideosByChannel } = useVideos();
+  const videosByChannel = getVideosByChannel();
+
   const services = [
     {
       icon: Play,
@@ -515,208 +519,103 @@ export default function Index() {
           </AnimatedSection>
 
           <div className="grid gap-12">
-            {/* Unblox Channel */}
-            <AnimatedSection direction="up" delay={0.1}>
-              <div className="mb-8 text-center">
-                <h3 className="text-3xl font-bold gradient-text mb-2">
-                  Chaîne Unblox
+            {Object.entries(videosByChannel).map(
+              ([channelName, channelVideos], channelIndex) => (
+                <AnimatedSection
+                  key={channelName}
+                  direction="up"
+                  delay={channelIndex * 0.1}
+                >
+                  <div className="mb-8 text-center">
+                    <h3 className="text-3xl font-bold gradient-text mb-2">
+                      {channelName === "Autres projets"
+                        ? "Mes Créations"
+                        : channelName}
+                    </h3>
+                    {channelVideos[0]?.stats && (
+                      <p className="text-lg text-slate-600">
+                        {channelVideos[0].stats}
+                      </p>
+                    )}
+                  </div>
+
+                  <div
+                    className={`grid gap-6 ${
+                      channelVideos.length === 1
+                        ? "max-w-2xl mx-auto"
+                        : channelVideos.length === 2
+                          ? "md:grid-cols-2"
+                          : "md:grid-cols-2 lg:grid-cols-3"
+                    }`}
+                  >
+                    {channelVideos.map((video, videoIndex) => (
+                      <motion.div
+                        key={video.id}
+                        whileHover={{ y: -5, scale: 1.02 }}
+                        transition={{
+                          type: "spring",
+                          stiffness: 300,
+                          damping: 20,
+                        }}
+                      >
+                        <Card className="overflow-hidden glass-effect hover:shadow-2xl transition-all duration-300 border-0">
+                          <div className="aspect-video">
+                            <iframe
+                              width="100%"
+                              height="100%"
+                              src={video.url}
+                              title={video.title}
+                              frameBorder="0"
+                              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                              allowFullScreen
+                              className="rounded-t-lg"
+                            ></iframe>
+                          </div>
+                          <div className="p-4">
+                            <Badge
+                              className={`mb-2 ${
+                                video.category === "Montage Complet"
+                                  ? "bg-green-100 text-green-700"
+                                  : video.category === "Animation & Effects"
+                                    ? "bg-purple-100 text-purple-700"
+                                    : video.category === "Motion Design"
+                                      ? "bg-orange-100 text-orange-700"
+                                      : "bg-blue-100 text-blue-700"
+                              }`}
+                            >
+                              {video.category}
+                            </Badge>
+                            {video.stats && (
+                              <div className="text-xs text-blue-600 font-medium mb-1">
+                                {video.stats}
+                              </div>
+                            )}
+                            <h4 className="font-semibold text-slate-800 mb-1 text-sm">
+                              {video.title}
+                            </h4>
+                            <p className="text-slate-600 text-sm">
+                              {video.description}
+                            </p>
+                          </div>
+                        </Card>
+                      </motion.div>
+                    ))}
+                  </div>
+                </AnimatedSection>
+              ),
+            )}
+
+            {videos.length === 0 && (
+              <div className="text-center py-12">
+                <Video className="h-16 w-16 text-slate-300 mx-auto mb-4" />
+                <h3 className="text-lg font-medium text-slate-600 mb-2">
+                  Aucune vidéo disponible
                 </h3>
-                <p className="text-lg text-slate-600">
-                  5K abonnés • Montage complet (sauf intro)
+                <p className="text-slate-500">
+                  Les vidéos apparaîtront ici une fois ajoutées via l'admin
                 </p>
               </div>
-              <div className="grid md:grid-cols-2 gap-6">
-                <motion.div
-                  whileHover={{ y: -5, scale: 1.02 }}
-                  transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                >
-                  <Card className="overflow-hidden glass-effect hover:shadow-2xl transition-all duration-300 border-0">
-                    <div className="aspect-video">
-                      <iframe
-                        width="100%"
-                        height="100%"
-                        src="https://www.youtube.com/embed/aqGsFXrHSRs?start=57"
-                        title="Unblox Video 1"
-                        frameBorder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowFullScreen
-                        className="rounded-t-lg"
-                      ></iframe>
-                    </div>
-                    <div className="p-4">
-                      <Badge className="mb-2 bg-blue-100 text-blue-700">
-                        Montage Vidéo
-                      </Badge>
-                      <p className="text-slate-600">
-                        Montage gaming dynamique avec effets visuels
-                      </p>
-                    </div>
-                  </Card>
-                </motion.div>
-
-                <motion.div
-                  whileHover={{ y: -5, scale: 1.02 }}
-                  transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                >
-                  <Card className="overflow-hidden glass-effect hover:shadow-2xl transition-all duration-300 border-0">
-                    <div className="aspect-video">
-                      <iframe
-                        width="100%"
-                        height="100%"
-                        src="https://www.youtube.com/embed/WxOcqbLx_eU"
-                        title="Unblox Video 2"
-                        frameBorder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowFullScreen
-                        className="rounded-t-lg"
-                      ></iframe>
-                    </div>
-                    <div className="p-4">
-                      <Badge className="mb-2 bg-blue-100 text-blue-700">
-                        Montage Vidéo
-                      </Badge>
-                      <p className="text-slate-600">
-                        Création de contenu gaming engageant
-                      </p>
-                    </div>
-                  </Card>
-                </motion.div>
-              </div>
-            </AnimatedSection>
-
-            {/* Nyjitag Channel */}
-            <AnimatedSection direction="up" delay={0.2}>
-              <div className="mb-8 text-center">
-                <h3 className="text-3xl font-bold gradient-text mb-2">
-                  Chaîne Nyjitag
-                </h3>
-                <p className="text-lg text-slate-600">
-                  2,45K abonnés • Montage complet
-                </p>
-              </div>
-              <div className="grid md:grid-cols-3 gap-6">
-                <motion.div
-                  whileHover={{ y: -5, scale: 1.02 }}
-                  transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                >
-                  <Card className="overflow-hidden glass-effect hover:shadow-2xl transition-all duration-300 border-0">
-                    <div className="aspect-video">
-                      <iframe
-                        width="100%"
-                        height="100%"
-                        src="https://www.youtube.com/embed/dPlBegvPOx0?start=18"
-                        title="Nyjitag Video 1"
-                        frameBorder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowFullScreen
-                        className="rounded-t-lg"
-                      ></iframe>
-                    </div>
-                    <div className="p-4">
-                      <Badge className="mb-2 bg-green-100 text-green-700">
-                        Montage Complet
-                      </Badge>
-                      <p className="text-slate-600">Storytelling immersif</p>
-                    </div>
-                  </Card>
-                </motion.div>
-
-                <motion.div
-                  whileHover={{ y: -5, scale: 1.02 }}
-                  transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                >
-                  <Card className="overflow-hidden glass-effect hover:shadow-2xl transition-all duration-300 border-0">
-                    <div className="aspect-video">
-                      <iframe
-                        width="100%"
-                        height="100%"
-                        src="https://www.youtube.com/embed/gnFiB_9JTpM"
-                        title="Nyjitag Video 2"
-                        frameBorder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowFullScreen
-                        className="rounded-t-lg"
-                      ></iframe>
-                    </div>
-                    <div className="p-4">
-                      <Badge className="mb-2 bg-green-100 text-green-700">
-                        Montage Complet
-                      </Badge>
-                      <p className="text-slate-600">Montage créatif avancé</p>
-                    </div>
-                  </Card>
-                </motion.div>
-
-                <motion.div
-                  whileHover={{ y: -5, scale: 1.02 }}
-                  transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                >
-                  <Card className="overflow-hidden glass-effect hover:shadow-2xl transition-all duration-300 border-0">
-                    <div className="aspect-video">
-                      <iframe
-                        width="100%"
-                        height="100%"
-                        src="https://www.youtube.com/embed/nvFm7ET8HJI"
-                        title="Nyjitag Video 3"
-                        frameBorder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowFullScreen
-                        className="rounded-t-lg"
-                      ></iframe>
-                    </div>
-                    <div className="p-4">
-                      <Badge className="mb-2 bg-green-100 text-green-700">
-                        Montage Complet
-                      </Badge>
-                      <p className="text-slate-600">
-                        Effets visuels professionnels
-                      </p>
-                    </div>
-                  </Card>
-                </motion.div>
-              </div>
-            </AnimatedSection>
-
-            {/* HazbinCombo Channel */}
-            <AnimatedSection direction="up" delay={0.3}>
-              <div className="mb-8 text-center">
-                <h3 className="text-3xl font-bold gradient-text mb-2">
-                  Chaîne HazbinCombo
-                </h3>
-                <p className="text-lg text-slate-600">
-                  2,20K abonnés • Montage spécialisé
-                </p>
-              </div>
-              <div className="max-w-2xl mx-auto">
-                <motion.div
-                  whileHover={{ y: -5, scale: 1.02 }}
-                  transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                >
-                  <Card className="overflow-hidden glass-effect hover:shadow-2xl transition-all duration-300 border-0">
-                    <div className="aspect-video">
-                      <iframe
-                        width="100%"
-                        height="100%"
-                        src="https://www.youtube.com/embed/62JMPHF8_Eg?start=20"
-                        title="HazbinCombo Video"
-                        frameBorder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowFullScreen
-                        className="rounded-t-lg"
-                      ></iframe>
-                    </div>
-                    <div className="p-4">
-                      <Badge className="mb-2 bg-purple-100 text-purple-700">
-                        Animation & Effects
-                      </Badge>
-                      <p className="text-slate-600">
-                        Montage avec animations et effets spéciaux avancés
-                      </p>
-                    </div>
-                  </Card>
-                </motion.div>
-              </div>
-            </AnimatedSection>
+            )}
           </div>
         </div>
       </section>
