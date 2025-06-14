@@ -21,6 +21,7 @@ import {
   Clock,
   Sparkles,
   Zap,
+  Video,
 } from "lucide-react";
 
 export default function Index() {
